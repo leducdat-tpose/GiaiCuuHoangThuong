@@ -228,13 +228,13 @@ namespace Watermelon
 
         private void LoadLevel(int levelID)
         {
-            loadedLevelIndex = levelID;
+            // loadedLevelIndex = levelID;
 
-            levelSaveData = SaveController.GetSaveObject<LevelSave>(string.Format("level_{0}", levelID));
+            // levelSaveData = SaveController.GetSaveObject<LevelSave>(string.Format("level_{0}", levelID));
 
-            NavMeshController.Initialise(levelController.navMeshSurface);
+            // NavMeshController.Initialise(levelController.navMeshSurface);
 
-            SceneManager.LoadScene(levelsDatabase.GetLevelByIndex(levelID).LevelName, LoadSceneMode.Additive);
+            // SceneManager.LoadScene(levelsDatabase.GetLevelByIndex(levelID).LevelName, LoadSceneMode.Additive);
         }
 
         public static void OnLevelCreated(Level level)

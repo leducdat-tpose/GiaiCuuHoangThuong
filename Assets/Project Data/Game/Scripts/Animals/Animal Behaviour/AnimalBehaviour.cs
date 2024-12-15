@@ -109,7 +109,7 @@ namespace Watermelon
 
         private void Update()
         {
-            animalStateMachineController.ActiveStateBehaviour.Update();
+            // animalStateMachineController.ActiveStateBehaviour.Update();
         }
 
         public void SetSpawnPoint(Vector3 spawnPoint)
@@ -202,6 +202,11 @@ namespace Watermelon
         {
             // Set leaving state
             animalStateMachineController.SetState(AnimalStateMachineController.State.Leaving);
+        }
+
+        public void FollowPlayer()
+        {
+            animalStateMachineController.SetState(AnimalStateMachineController.State.FollowPlayer);
         }
 
         public void SetMovementSpeed(float movementSpeed)
@@ -402,11 +407,11 @@ namespace Watermelon
 
         private void OnTriggerEnter(Collider other)
         {
-            animalStateMachineController.ActiveStateBehaviour.OnTriggerEnter(other);
+            // animalStateMachineController.ActiveStateBehaviour.OnTriggerEnter(other);
         }
         private void OnTriggerExit(Collider other)
         {
-            animalStateMachineController.ActiveStateBehaviour.OnTriggerExit(other);
+            // animalStateMachineController.ActiveStateBehaviour.OnTriggerExit(other);
         }
 
         public float GetCarryingHeight()

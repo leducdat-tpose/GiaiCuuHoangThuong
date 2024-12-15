@@ -21,7 +21,8 @@ namespace Watermelon
             ReturnToWaiting = 3,
             Picked = 4,
             PlacedOnTable = 5,
-            Leaving = 6
+            Leaving = 6,
+            FollowPlayer = 7
         }
     }
 }

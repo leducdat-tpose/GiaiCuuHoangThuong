@@ -6,6 +6,7 @@ TagManager:
   tags:
   - Nurse
   - Visitor
+  - Animal
   layers:
   - Default
   - TransparentFX

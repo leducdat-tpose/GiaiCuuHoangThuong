@@ -13,4 +13,12 @@ public enum GameState
 public static class Constants
 {
     public static readonly string PlayerTag = "Player";
+
+    #region Tsunami
+    public static readonly float TsunamiTimet0 = 15f; 
+    public static readonly float TsunamiTimet1 = 40f; 
+    public static readonly float TsunamiTimet2 = 25f; 
+    public static readonly float TsunamSpeedv1 = 10f;
+    public static readonly float TsunamSpeedv2 = 40f;
+    #endregion
 }

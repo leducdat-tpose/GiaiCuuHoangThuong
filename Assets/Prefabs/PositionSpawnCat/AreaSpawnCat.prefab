@@ -45,4 +45,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _radius: 20
-  _prefab: {fileID: 3723217540529644781, guid: f189ed0d00cbd494e9c7ddb2adf40746, type: 3}
+  _prefab:
+  - {fileID: 3723217540529644781, guid: f189ed0d00cbd494e9c7ddb2adf40746, type: 3}
+  - {fileID: 4940788795420556183, guid: a7f5f3d0368b3f84c8854fc9f09f48c6, type: 3}
+  - {fileID: 6824056633908700397, guid: e1e2bfd57f1707645ba5065336a429a6, type: 3}

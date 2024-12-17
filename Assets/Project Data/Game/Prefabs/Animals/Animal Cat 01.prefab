@@ -180,6 +180,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7557fc0ecf82ed348b08effb5e9cc1b1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  _player: {fileID: 8743998349625417120, guid: 1082c6236f468ee47b0ead23c5b2aee6, type: 3}
   animalAnimator: {fileID: 4252642487522260198}
   skinnedMeshRenderer: {fileID: 7839145191861711503}
   defaultMaterial: {fileID: 2100000, guid: 61f5a3d2586fa8741aaea5a59831eca0, type: 2}

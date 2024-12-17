@@ -30,7 +30,7 @@ namespace Watermelon
             startReturnTime = Time.time + PICK_UP_DELAY_AFTER_DROP;
 
             stateMachineController.ParentBehaviour.StartMovement();
-            stateMachineController.ParentBehaviour.SetMovementSpeed(AnimalBehaviour.MOVEMENT_SEEED_RUN);
+            stateMachineController.ParentBehaviour.SetMovementSpeed(AnimalBehaviour.MOVEMENT_SPEED_RUN);
 
             if (stateMachineController.ParentBehaviour.IsMovementAllowed)
             {

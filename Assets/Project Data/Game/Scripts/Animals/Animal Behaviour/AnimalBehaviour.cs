@@ -13,7 +13,12 @@ namespace Watermelon
         public static readonly int MOVEMENT_SPEED_HASH = Animator.StringToHash("Movement Speed");
 
         public const float MOVEMENT_SPEED_DEFAULT = 1.8f;
-        public const float MOVEMENT_SEEED_RUN = 3.5f;
+        public const float MOVEMENT_SPEED_RUN = 3.5f;
+
+        private float _moveSpeedFollowPlayer;
+
+        [SerializeField] GameObject _player;
+        public GameObject Player => _player;
 
         [SerializeField] Animator animalAnimator;
         public Animator AnimalAnimator => animalAnimator;
@@ -47,6 +52,9 @@ namespace Watermelon
 
         private bool isPicked;
         public bool IsPicked => isPicked;
+
+        private bool hasInitialiseMain = false;
+        public bool HasInitialiseMain => hasInitialiseMain;
 
         private WaitingIndicatorBehaviour activeWaitingIndicator;
 
@@ -107,9 +115,31 @@ namespace Watermelon
             animalStateMachineController.Initialise(this, AnimalStateMachineController.State.Carrying);
         }
 
+        public void InitialiseMain(){
+            isPicked = false;
+            isMoving = false;
+            isBusy = false;
+            isCured = false;
+            hasInitialiseMain = true;
+            animalHolder = null;
+
+            DisableSickness();
+
+            tableBehaviour = null;
+
+            // Enable outline
+            SetOutlineState(true);
+            navMeshAgent.enabled = false;
+
+            // Initialise state machine controller
+            animalStateMachineController = new AnimalStateMachineController();
+            animalStateMachineController.Initialise(this, AnimalStateMachineController.State.Idle);
+        }
+
         private void Update()
         {
-            // animalStateMachineController.ActiveStateBehaviour.Update();
+            if(!hasInitialiseMain) return;
+            animalStateMachineController.ActiveStateBehaviour.Update();
         }
 
         public void SetSpawnPoint(Vector3 spawnPoint)
@@ -204,8 +234,10 @@ namespace Watermelon
             animalStateMachineController.SetState(AnimalStateMachineController.State.Leaving);
         }
 
-        public void FollowPlayer()
+        public void FollowPlayer(PlayerInfo playerInfo)
         {
+            _player = playerInfo.gameObject;
+            _moveSpeedFollowPlayer = playerInfo.MoveSpeed;
             animalStateMachineController.SetState(AnimalStateMachineController.State.FollowPlayer);
         }
 
@@ -217,6 +249,10 @@ namespace Watermelon
         }
 
         #region Movement
+        public float GetMoveSpeedFollowPlayer()
+        {
+            return _moveSpeedFollowPlayer;
+        }
         public void AllowMovement()
         {
             isMovementAllowed = true;

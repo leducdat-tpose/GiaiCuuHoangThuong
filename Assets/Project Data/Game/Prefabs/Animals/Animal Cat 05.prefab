@@ -147,7 +147,7 @@ GameObject:
   - component: {fileID: 8129723507840908762}
   m_Layer: 0
   m_Name: Animal Cat 05
-  m_TagString: Untagged
+  m_TagString: Animal
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -180,6 +180,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7557fc0ecf82ed348b08effb5e9cc1b1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  _player: {fileID: 8743998349625417120, guid: 1082c6236f468ee47b0ead23c5b2aee6, type: 3}
   animalAnimator: {fileID: 2316068681946460097}
   skinnedMeshRenderer: {fileID: 8640722111453522344}
   defaultMaterial: {fileID: 2100000, guid: 61f5a3d2586fa8741aaea5a59831eca0, type: 2}

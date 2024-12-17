@@ -126,7 +126,6 @@ public class MapGenerator : MonoBehaviour
             AreaSpawnCat script = child.gameObject.GetComponent<AreaSpawnCat>();
             _animalPositions[i] = script.SpawnCat();
             i++;
-            Debug.Log("Cat spawn" + i);
         }
     }
 }

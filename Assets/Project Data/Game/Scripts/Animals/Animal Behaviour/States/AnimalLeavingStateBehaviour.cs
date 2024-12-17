@@ -20,7 +20,7 @@ namespace Watermelon
         public override void OnStateActivated()
         {
             stateMachineController.ParentBehaviour.StartMovement();
-            stateMachineController.ParentBehaviour.SetMovementSpeed(AnimalBehaviour.MOVEMENT_SEEED_RUN);
+            stateMachineController.ParentBehaviour.SetMovementSpeed(AnimalBehaviour.MOVEMENT_SPEED_RUN);
 
             if (stateMachineController.ParentBehaviour.IsMovementAllowed)
             {

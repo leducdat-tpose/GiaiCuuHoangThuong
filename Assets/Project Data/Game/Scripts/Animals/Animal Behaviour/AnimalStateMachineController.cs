@@ -11,6 +11,9 @@ namespace Watermelon
             RegisterState(new AnimalPickedStateBehaviour(this), State.Picked);
             RegisterState(new AnimalPlacedOnTableStateBehaviour(this), State.PlacedOnTable);
             RegisterState(new AnimalLeavingStateBehaviour(this), State.Leaving);
+            RegisterState(new AnimalFollowPlayerStateBehaviour(this), State.FollowPlayer);
+            RegisterState(new AnimalIdleStateBehaviour(this), State.Idle);
+            
         }
 
         public enum State
@@ -22,7 +25,8 @@ namespace Watermelon
             Picked = 4,
             PlacedOnTable = 5,
             Leaving = 6,
-            FollowPlayer = 7
+            FollowPlayer = 7,
+            Idle = 8
         }
     }
 }

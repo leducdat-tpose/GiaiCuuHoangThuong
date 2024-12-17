@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class PlayerInfo : MonoBehaviour
 {
-    public float MoveSpeed => _moveSpeed;
+    public float MoveSpeed => _moveSpeed * Constants.IndexMultiplyWithSpeed;
     [SerializeField]
     private float _moveSpeed;
     private int Strength => _strength;

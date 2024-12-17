@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using Watermelon;
 
 public class AreaSpawnCat : MonoBehaviour
 {
@@ -22,6 +23,8 @@ public class AreaSpawnCat : MonoBehaviour
         GameObject prefab = Instantiate(_prefab[Random.Range(0, _prefab.Length)],PositionSpawn(), Quaternion.Euler(0f, Random.Range(0f, 360f), 0f));
         prefab.transform.localScale = new Vector3(_scale, _scale, _scale);
         prefab.transform.parent = this.transform;
+        AnimalBehaviour animalBehaviour = prefab.GetComponent<AnimalBehaviour>();
+        animalBehaviour.InitialiseMain();
         return prefab.transform.position;
     }
 

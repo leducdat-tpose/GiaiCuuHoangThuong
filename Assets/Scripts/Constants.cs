@@ -13,6 +13,9 @@ public enum GameState
 public static class Constants
 {
     public static readonly string PlayerTag = "Player";
+    public static readonly string AnimalTag = "Animal";
+
+    public static readonly float IndexMultiplyWithSpeed = 10f;
 
     #region Tsunami
     public static readonly float TsunamiTimet0 = 15f; 

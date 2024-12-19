@@ -20,6 +20,7 @@ public class PlayerBehaviour : MonoBehaviour
     public static readonly int RUN_HASH = Animator.StringToHash("Run");
     public static readonly int MOVEMENT_MULTIPLIER_HASH = Animator.StringToHash("Movement Multiplier");
     private PlayerInfo _playerInfo;
+    public PlayerInfo PlayerInfo => _playerInfo;
     private PlayerInput _playerInput;
     private CharacterController _controller;
     private NavMeshAgent _agent;

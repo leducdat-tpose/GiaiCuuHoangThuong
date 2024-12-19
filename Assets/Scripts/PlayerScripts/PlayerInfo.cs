@@ -16,7 +16,7 @@ public class PlayerInfo : MonoBehaviour
 
     public void UpgradeMoveSpeed()
     {
-
+        _moveSpeed += 0.2f;
     }
     public void UpgradeStrength()
     {

@@ -28,9 +28,12 @@ public class MapGenerator : MonoBehaviour
     public GameObject[] ObstaclePrefabs;
     [Range(0,1)]
     public float Threshold;
+    [Range(0.001f, 0.05f)]
+    public float MinusFactorThreshold;
     public GroundType[] GroundTypes;
     public void GenerateMap()
     {
+        float subThreshold = Threshold - GameControlMain.Instance.Level*MinusFactorThreshold;
         float [,] noiseMap = Noise.GenerateNoiseMap(MapWidth, MapHeight,Seed, NoiseScale,Octaves,Persistance,Lacunarity,Offset);
         
         // Color[] colorMap = new Color[MapWidth * MapHeight];
@@ -65,7 +68,7 @@ public class MapGenerator : MonoBehaviour
             for(int x = 0; x < MapWidth; x++)
             {
                 float noiseValue = noiseMap[x,y];
-                if(noiseValue < Threshold) continue;
+                if(noiseValue < subThreshold) continue;
                 float randomNum = Random.value;
                 if(randomNum < noiseValue) continue;
                 Vector3 obstacleSpawnPosition = new Vector3(x*10f, 0f, y*10f);

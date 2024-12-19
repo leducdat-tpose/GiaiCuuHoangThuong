@@ -12,6 +12,7 @@ public class TsunamiBehaviour : MonoBehaviour
 
     private void Start() {
         _collider = GetComponent<BoxCollider>();
+        GameControlMain.Instance.StartPlayGame.AddListener(StartTsunami);
     }
     
     private void Update() {
@@ -27,5 +28,26 @@ public class TsunamiBehaviour : MonoBehaviour
         if(other.gameObject.tag != Constants.PlayerTag) return;
         var playerBehave = other.GetComponent<PlayerBehaviour>();
         playerBehave.SetPlayerGameOver();
+        GameControlMain.Instance.SetGameState(GameState.GameOver);
+        _moveSpeed = 0;
+    }
+
+    public void StartTsunami()
+    {
+        StartCoroutine("SimulatorTsunami");
+    }
+
+    public void SetMoveSpeed(float speed)
+    {
+        _moveSpeed = speed;
+    }
+
+    IEnumerator SimulatorTsunami()
+    {
+        yield return new WaitForSeconds(Constants.TsunamiTimet0);
+        SetMoveSpeed(Constants.TsunamSpeedv1);
+        yield return new WaitForSeconds(Constants.TsunamiTimet1);
+        SetMoveSpeed(Constants.TsunamSpeedv2);
+        yield return null;
     }
 }

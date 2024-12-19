@@ -7,7 +7,9 @@ public enum GameState
     Lobby,
     Start,
     Playing,
-    GameOver
+    GameOver,
+    Victory,
+    Prepare,
 }
 
 public static class Constants
@@ -16,6 +18,8 @@ public static class Constants
     public static readonly string AnimalTag = "Animal";
 
     public static readonly float IndexMultiplyWithSpeed = 10f;
+
+    public static readonly float PrepareToPlayTime = 5f;
 
     #region Tsunami
     public static readonly float TsunamiTimet0 = 15f; 
